@@ -25,13 +25,14 @@ import { onMounted } from "vue";
 import Pop from "../utils/Pop.js";
 import { logger } from "../utils/Logger.js";
 import { AppState } from "../AppState.js";
+import { notesService } from "../services/NoteService.js"
 
 export default {
   setup() {
-    function getNotes() {
+    async function getNotes() {
       try {
         const userId = AppState.account.id
-        await
+        await notesService.getNotes(userId)
       } catch (error) {
         Pop.error(error.message)
         logger.error(error)
