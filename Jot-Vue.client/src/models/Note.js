@@ -8,6 +8,5 @@ export class Note {
     this.category = data.category
     this.createdAt = new Date(data.createdAt)
     this.updatedAt = new Date(data.updatedAt)
-
   }
 }
